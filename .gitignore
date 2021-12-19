@@ -1,18 +1,20 @@
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
-
-# Other files and folders
-.settings/
-
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
-
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/src/Service/Retail/Csv/
+/public/bundles/
+/public/assets/build/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
+###> symfony/phpunit-bridge ###
+.phpunit
+/phpunit.xml
+###< symfony/phpunit-bridge ###
+###> IDE settings ###
+/.idea
+###< IDE settings ###
+###<DS Store ###
+.DS_Store
+###>DS Store ###
