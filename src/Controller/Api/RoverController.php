@@ -16,7 +16,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 class RoverController extends AbstractController
 {
     /**
-     * @Route("/rover", methods={"PUT"}, name="api.rover.create")
+     * @Route("/rover", methods={"PUT"}, name="api.rover.upsert")
      *
      * @param Request          $request
      * @param RequestValidator $requestValidator

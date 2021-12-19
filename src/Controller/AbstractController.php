@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
 
-abstract class AbstractController
+abstract class AbstractController extends \Symfony\Bundle\FrameworkBundle\Controller\AbstractController
 {
     /**
      * {@inheritdoc}

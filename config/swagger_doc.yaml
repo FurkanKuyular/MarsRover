@@ -1,0 +1,143 @@
+swagger: "2.0"
+info:
+  description: "This is a MarsRover api documentation"
+  version: "1.0.0"
+  title: "Swagger MarsRover"
+  contact:
+    email: "furkankuyular@yahoo.com"
+  license:
+    name: "Symfony server"
+    url: "https://symfony.com/doc/current/setup/symfony_server.html"
+host: "127.0.0.1:8005"
+basePath: "/v2"
+tags:
+  - name: "plateu"
+    description: "Plateu create and get services"
+  - name: "rover"
+    description: "Rover create and get services"
+schemes:
+  - "https"
+paths:
+  /plateu:
+    post:
+      tags:
+        - "plateu"
+      summary: "Create new plateu"
+      description: ""
+      operationId: "createPlateu"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/Plateu"
+      responses:
+        "405":
+          description: "Invalid input"
+    get:
+      tags:
+        - "plateu"
+      summary: "Get plateu information"
+      description: ""
+      operationId: "getPlateu"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      responses:
+        "200":
+          description: "İşlem başarılı"
+        "400":
+          description: "Geçersiz parametre"
+        "401":
+          description: "Erişim bilgileri geçerli değil"
+        "403":
+          description: "Yetkisiz kullanıcı"
+        "405":
+          description: "Geçersiz Http verb/method"
+        "429":
+          description: "Çok fazla istekte bulundun"
+        "500":
+          description: "Bilinmeyen bir hata oluştu"
+        "503":
+          description: "Bilinmeyen bir hata oluştu"
+
+  /rover:
+    put:
+      tags:
+        - "rover"
+      summary: "Upsert rover"
+      description: ""
+      operationId: "upsertRover"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/Rover"
+      responses:
+        default:
+          description: "successful operation"
+    get:
+      tags:
+        - "rover"
+      summary: "Get rover information"
+      description: ""
+      operationId: "getRover"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      responses:
+        "200":
+          description: "İşlem başarılı"
+        "400":
+          description: "Geçersiz parametre"
+        "401":
+          description: "Erişim bilgileri geçerli değil"
+        "403":
+          description: "Yetkisiz kullanıcı"
+        "405":
+          description: "Geçersiz Http verb/method"
+        "429":
+          description: "Çok fazla istekte bulundun"
+        "500":
+          description: "Bilinmeyen bir hata oluştu"
+        "503":
+          description: "Bilinmeyen bir hata oluştu"
+definitions:
+  Rover:
+    type: "object"
+    required:
+      - commands
+    properties:
+      commands:
+        type: "string"
+        pattern: "/[LMR]+$/"
+        example: "RMLLMRRM"
+  Plateu:
+    type: "object"
+    required:
+      - "xCoordination"
+      - "yCoordination"
+      - "compassCharacter"
+    properties:
+      xCoordination:
+        type: "integer"
+        example: 5
+      yCoordination:
+        type: "integer"
+        example: 5
+      compassCharacter:
+        type: "string"
+        enum:
+          - "N"
+          - "E"
+          - "S"
+          - "W"

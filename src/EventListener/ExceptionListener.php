@@ -14,6 +14,7 @@ class ExceptionListener
      */
     public function onKernelException(ExceptionEvent $event)
 	{
+	    return;
 		$exception = $event->getThrowable();
 
         if ($exception instanceof \Throwable) {

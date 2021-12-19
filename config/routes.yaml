@@ -1,3 +1,11 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+api.public.doc.index:
+  controller: App\Controller\Api\DocumentController::index
+  path: /doc
+  methods: [GET]
+api.public.doc.config:
+  controller: App\Controller\Api\DocumentController::config
+  path: /doc/swagger_config.json
+  methods: [GET]
