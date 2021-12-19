@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "4ead3116-8ebb-4a91-92ab-238dbfc761aa",
+		"name": "MarsRover",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Plateu",
+			"item": [
+				{
+					"name": "Create plateu",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"xCoordination\": 5,\n    \"yCoordination\": 5,\n    \"compassCharacter\": \"N\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://127.0.0.1:8005/api/plateu",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8005",
+							"path": [
+								"api",
+								"plateu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Plateu",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rover",
+			"item": [
+				{
+					"name": "Upsert rover",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"commands\": \"R\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://127.0.0.1:8005/api/rover",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8005",
+							"path": [
+								"api",
+								"rover"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Rover",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://127.0.0.1:8005/api/rover",
+							"protocol": "https",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8005",
+							"path": [
+								"api",
+								"rover"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
